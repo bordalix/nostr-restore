@@ -40,13 +40,20 @@ const restore = async () => {
   el('broadcasting-status').innerText = 'Done'
 }
 
-if (typeof data === 'undefined') {
-  el('noDataError').style.display = ''
-} else {
-  if (!window.localStorage.href.match('file://')) {
-    el('runLocally').style.display = ''
-  } else {
-    el('events-found').innerText = `${data.length} events found`
-    el('form').style.display = ''
+if (window.location.href.match('file://')) {
+  var script = document.createElement('script')
+  script.type = 'text/javascript'
+  script.src = './nostr-backup.js'
+  document.head.appendChild(script)
+  script.onload = () => {
+    if (typeof data === 'undefined') {
+      el('noDataError').style.display = ''
+    } else {
+      el('events-found').innerText = `${data.length} events found`
+      el('form').style.display = ''
+    }
   }
+  script.onerror = () => (el('noDataError').style.display = '')
+} else {
+  el('runLocally').style.display = ''
 }
