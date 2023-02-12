@@ -101,9 +101,44 @@
       </p>
     </details>
     <div class="box gray">
-      <p id="error" style="display: none">
-        No data found: check the instructions above
-      </p>
+      <div id="noDataError" style="display: none">
+        <p>No data found.</p>
+        <p>Make sure your backup file:</p>
+        <ul>
+          <li>Is a javascript file (not a json file)</li>
+          <li>Is named <u>nostr-backup.js</u></li>
+          <li>Is on the same folder as <u>index.html</u></li>
+        </ul>
+        <details>
+          <summary>My backup file is a .json file, what can I do?</summary>
+          <ul>
+            <li>
+              Copy your <u>nostr-backup.json</u> to the root directory of this
+              app
+            </li>
+            <li>Open <u>nostr-backup.json</u> with a text editor</li>
+            <li>
+              Add the following code to the first line:
+              <pre>const data =</pre>
+            </li>
+            <li>
+              Save the file as <u>nostr-backup.js</u> (note the extension
+              change)
+            </li>
+          </ul>
+        </details>
+      </div>
+      <div id="runLocally" style="display: none">
+        <p>App must run locally.</p>
+        <p>
+          Due to browser limitations, you'll have to use this project from your
+          disk in order for it to be able to import your backup file:
+        </p>
+        <ul>
+          <li>Save this file to the same folder where your backup file is</li>
+          <li>Open this file (<u>index.html</u>) with a browser</li>
+        </ul>
+      </div>
       <div id="form" class="space-between" style="display: none">
         <p id="events-found"></p>
         <p>
@@ -128,6 +163,6 @@
     </div>
     <script src="./nostr-backup.js"></script>
     <script src="js/relays.js"></script>
-    <script src="js/restore.js"></script>
+    <script src="js/nostr-restore.js"></script>
   </body>
 </html>

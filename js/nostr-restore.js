@@ -41,8 +41,12 @@ const restore = async () => {
 }
 
 if (typeof data === 'undefined') {
-  el('error').style.display = ''
+  el('noDataError').style.display = ''
 } else {
-  el('events-found').innerText = `${data.length} events found`
-  el('form').style.display = ''
+  if (!window.localStorage.href.match('file://')) {
+    el('runLocally').style.display = ''
+  } else {
+    el('events-found').innerText = `${data.length} events found`
+    el('form').style.display = ''
+  }
 }
