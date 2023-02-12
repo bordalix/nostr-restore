@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Nostr restore</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/nostr-restore.css" />
   </head>
@@ -43,9 +43,11 @@
           your disk and then open the html file with your browser
         </li>
         <li>
-          Browsers don't allow importing JSON files locally, but will allow
-          Javascript files, so we need to transform our
-          <u>nostr-backup.json</u> file into a Javascript file:
+          Older versions of
+          <a href="http://nostr-backup.pages.dev">nostr-backup</a> exported a
+          JSON file, but due to security limitations browsers don't allow
+          importing JSON files locally, but allow Javascript files, so we need
+          to transform our <u>nostr-backup.json</u> file into a Javascript file:
         </li>
         <ul>
           <li>
