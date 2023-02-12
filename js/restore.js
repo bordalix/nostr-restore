@@ -40,7 +40,7 @@ const restore = async () => {
   el('broadcasting-status').innerText = 'Done'
 }
 
-if (!data) {
+if (typeof data === 'undefined') {
   el('error').style.display = ''
 } else {
   el('events-found').innerText = `${data.length} events found`
