@@ -22,7 +22,6 @@ If your backup file is a JSON file (nostr-backup`.json`) you need to transform i
 - Copy your `nostr-backup.json` to the root directory of this app
 - Open `nostr-backup.json` with a text editor
 - Add the following code to the first line: `const data =`
-- So, instead of `[` your first line should be `const data = [`
 - Save the file as `nostr-backup.js` (note the extension change)
 - Now when you open the `index.html` (or whatever name you saved your file) with your browser you should see an indication of how many events were found and a button to start broadcasting
 
