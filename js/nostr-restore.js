@@ -41,6 +41,7 @@ const restore = async () => {
 }
 
 if (window.location.href.match('file://')) {
+  el('runLocally').style.display = 'none'
   var script = document.createElement('script')
   script.type = 'text/javascript'
   script.src = './nostr-backup.js'
