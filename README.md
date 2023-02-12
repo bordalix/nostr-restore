@@ -2,20 +2,32 @@
 
 This app will restore your events from a nostr-backup file
 
-Due to browser limitations, you'll have to use this project in a different way:
+### App must run locally
 
-- You'll have to run it locally, so you will need to get the code from the repo and open the _index.html_ file with your browser
-- Browsers don't allow importing JSON files locally, but will allow Javascript files, so we need to transform our _nostr-backup.json_ file into a Javascript file:
+Due to browser limitations, you'll have to run this app locally:
 
-  - Copy your _nostr-backup.json_ to the root directory of this app
-  - Open _nostr-backup.json_ with a text editor
-  - Add the following code to the first line:
-    _const data =_
-  - Save the file as _nostr-backup.js_ (**note the extension change**)
-  - Now when you open the _index.html_ with your browser you should see an indication of how many events were found and a button to start broadcasting
+- go to https://nostr-restore.pages.dev, save to disk and open html file with your browser
+- get the code from the this repo and open the index.html file with your browser
+
+### Import backup file
+
+Browsers don't allow importing JSON files locally, but allow Javascript files.
+
+Older versions of https://nostr-backup.pages.dev exported a JSON file (instead of a Javascript file).
+
+If your backup file is a JSON file (nostr-backup`.json`) you need to transform it into a javascript file (nostr-backup`.js`). Don't worry, is easy:
+
+- Copy your nostr-backup.json to the root directory of this app
+- Open nostr-backup.json with a text editor
+- Add the following code to the first line: `const data =`
+- So, instead of `[` your first line should be `const data = [`
+- Save the file as nostr-backup.js (note the extension change)
+- Now when you open the index.html with your browser you should see an indication of how many events were found and a button to start broadcasting
+
+### Relays
 
 If you want to use your own list of relays:
 
-- Clone repo
+- Clone this repo
 - Edit js/relays.js
 - Open index.html with a browser
