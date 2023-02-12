@@ -1,122 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nostr restore</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/nostr-restore.css" />
-  </head>
-  <body>
-    <main class="container">
-      <div class="space-between">
-        <h1>Nostr restore</h1>
+  <html data-theme="light" lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <!-- Primary Meta Tags -->
+      <title>Nostr restore</title>
+      <meta name="title" content="Nostr restore" />
+      <meta name="description" content="Restore your Nostr events" />
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://nostr-restore.pages.dev/" />
+      <meta property="og:title" content="Nostr restore" />
+      <meta property="og:description" content="Restore your Nostr events" />
+      <meta property="og:image" content="img/nostr-restore_og.png" />
+      <!-- Twitter -->
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://nostr-restore.pages.dev/" />
+      <meta property="twitter:title" content="Nostr restore" />
+      <meta
+        property="twitter:description"
+        content="Restore your Nostr events" />
+      <meta property="twitter:image" content="img/nostr-restore_twitter.png" />
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="img/restore.png" type="image/x-icon" />
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/nostr-restore.css" />
+      <!-- Lightning -->
+      <meta name="lightning" content="bordalix@getalby.com" />
+      <!-- PWA -->
+      <meta name="theme-color" content="#ffffff" />
+      <link rel="apple-touch-icon" href="img/restore.png" />
+    </head>
+    <body>
+      <main class="container">
+        <div class="space-between">
+          <h1>Nostr restore</h1>
+          <p>
+            <a href="https://github.com/bordalix/nostr-restore"
+              ><img src="img/github.png"
+            /></a>
+            <a href="https://twitter.com/bordalix/"
+              ><img src="img/twitter.png"
+            /></a>
+            <a
+              href="https://snort.social/p/npub1vt803quxxq32fuwkp42g2lyaw2t9qupvnl3z0vyc3s9kudkyhn8qt28cxv"
+              ><img src="img/nostr.png"
+            /></a>
+          </p>
+        </div>
+      </main>
+      <p>Restore your nostr backup.</p>
+      <details>
+        <summary>Know more</summary>
         <p>
-          <a href="https://github.com/bordalix/nostr-restore"
-            ><img src="img/github.png"
-          /></a>
-          <a href="https://twitter.com/bordalix/"
-            ><img src="img/twitter.png"
-          /></a>
-          <a
-            href="https://snort.social/p/npub1vt803quxxq32fuwkp42g2lyaw2t9qupvnl3z0vyc3s9kudkyhn8qt28cxv"
-            ><img src="img/nostr.png"
-          /></a>
+          This app will restore your events from a
+          <a href="https://nostr-backup.pages.dev/">nostr-backup</a> file
         </p>
-      </div>
-    </main>
-    <p>Restore your nostr backup.</p>
-    <details>
-      <summary>Know more</summary>
-      <p>
-        This app will restore your events from a
-        <a href="https://nostr-backup.pages.dev/">nostr-backup</a> file
-      </p>
-      <p>
-        Due to browser limitations, you'll have to use this project in a
-        different way:
-      </p>
-      <ul>
-        <li>
-          You'll have to run it locally, so you will need to save this page to
-          your disk and then open the html file with your browser
-        </li>
-        <li>
-          Older versions of
-          <a href="http://nostr-backup.pages.dev">nostr-backup</a> exported a
-          JSON file, but due to security limitations browsers don't allow
-          importing JSON files locally, but allow Javascript files, so we need
-          to transform our <u>nostr-backup.json</u> file into a Javascript file:
-        </li>
+        <p>
+          Due to browser limitations, you'll have to use this project in a
+          different way:
+        </p>
         <ul>
           <li>
-            Copy your <u>nostr-backup.json</u> to the root directory of this app
-          </li>
-          <li>Open <u>nostr-backup.json</u> with a text editor</li>
-          <li>
-            Add the following code to the first line:
-            <pre>const data =</pre>
+            You'll have to run it locally, so you will need to save this page to
+            your disk and then open the html file with your browser
           </li>
           <li>
-            Save the file as <u>nostr-backup.js</u> (note the extension change)
+            Older versions of
+            <a href="http://nostr-backup.pages.dev">nostr-backup</a> exported a
+            JSON file, but due to security limitations browsers don't allow
+            importing JSON files locally, but allow Javascript files, so we need
+            to transform our <u>nostr-backup.json</u> file into a Javascript
+            file:
           </li>
-        </ul>
-        <li>
-          Make sure the app html file and <u>nostr-backup.js</u> are on the same
-          folder
-        </li>
-        <li>
-          Now when you open the <u>index.html</u> with your browser you should
-          see an indication of how many events were found and a button to start
-          broadcasting
-        </li>
-      </ul>
-      <p>
-        If you want to use your own
-        <a
-          href="https://github.com/bordalix/nostr-restore/blob/master/js/relays.js"
-          >list of relays</a
-        >:
-      </p>
-      <ul>
-        <li>
-          Clone <a href="https://github.com/bordalix/nostr-restore">repo</a>
-        </li>
-        <li>Edit <u>js/relays.js</u></li>
-        <li>Open <u>index.html</u> with a browser</li>
-      </ul>
-      <p>
-        Repo at
-        <a href="https://github.com/bordalix/nostr-restore"
-          >https://github.com/bordalix/nostr-restore</a
-        >
-      </p>
-      <p>
-        Twitter
-        <a href="https://twitter.com/bordalix">thread</a>
-        for discussion
-      </p>
-      <p>
-        Nostr
-        <a
-          href="https://snort.social/p/npub1vt803quxxq32fuwkp42g2lyaw2t9qupvnl3z0vyc3s9kudkyhn8qt28cxv"
-          >thread</a
-        >
-        for discussion
-      </p>
-    </details>
-    <div class="box gray">
-      <div id="noDataError" style="display: none">
-        <p>No data found.</p>
-        <p>Make sure your backup file:</p>
-        <ul>
-          <li>Is a javascript file (not a json file)</li>
-          <li>Is named <u>nostr-backup.js</u></li>
-          <li>Is on the same folder as <u>index.html</u></li>
-        </ul>
-        <details>
-          <summary>My backup file is a .json file, what can I do?</summary>
           <ul>
             <li>
               Copy your <u>nostr-backup.json</u> to the root directory of this
@@ -132,42 +89,115 @@
               change)
             </li>
           </ul>
-        </details>
-      </div>
-      <div id="runLocally" style="display: none">
-        <p>App must run locally.</p>
+          <li>
+            Make sure the app html file and <u>nostr-backup.js</u> are on the
+            same folder
+          </li>
+          <li>
+            Now when you open the <u>index.html</u> with your browser you should
+            see an indication of how many events were found and a button to
+            start broadcasting
+          </li>
+        </ul>
         <p>
-          Due to browser limitations, you'll have to use this app from your disk
-          in order for it to be able to import your backup file:
+          If you want to use your own
+          <a
+            href="https://github.com/bordalix/nostr-restore/blob/master/js/relays.js"
+            >list of relays</a
+          >:
         </p>
         <ul>
-          <li>Save this app into the same folder where your backup file is</li>
-          <li>Open the resulting html file with your browser</li>
+          <li>
+            Clone <a href="https://github.com/bordalix/nostr-restore">repo</a>
+          </li>
+          <li>Edit <u>js/relays.js</u></li>
+          <li>Open <u>index.html</u> with a browser</li>
         </ul>
-      </div>
-      <div id="form" class="space-between" style="display: none">
-        <p id="events-found"></p>
         <p>
-          <button onclick="restore()">Restore</button>
+          Repo at
+          <a href="https://github.com/bordalix/nostr-restore"
+            >https://github.com/bordalix/nostr-restore</a
+          >
         </p>
-      </div>
-    </div>
-    <div class="box">
-      <div class="space-between">
-        <p id="broadcasting-status"></p>
-        <p style="padding-top: 2px">
-          <progress
-            type="range"
-            id="broadcasting-progress"
-            name="broadcasting-progress"
-            min="0"
-            max="20"
-            value="0"
-            style="visibility: hidden" />
+        <p>
+          Twitter
+          <a href="https://twitter.com/bordalix">thread</a>
+          for discussion
         </p>
+        <p>
+          Nostr
+          <a
+            href="https://snort.social/p/npub1vt803quxxq32fuwkp42g2lyaw2t9qupvnl3z0vyc3s9kudkyhn8qt28cxv"
+            >thread</a
+          >
+          for discussion
+        </p>
+      </details>
+      <div class="box gray">
+        <div id="noDataError" style="display: none">
+          <p>No data found.</p>
+          <p>Make sure your backup file:</p>
+          <ul>
+            <li>Is a javascript file (not a json file)</li>
+            <li>Is named <u>nostr-backup.js</u></li>
+            <li>Is on the same folder as <u>index.html</u></li>
+          </ul>
+          <details>
+            <summary>My backup file is a .json file, what can I do?</summary>
+            <ul>
+              <li>
+                Copy your <u>nostr-backup.json</u> to the root directory of this
+                app
+              </li>
+              <li>Open <u>nostr-backup.json</u> with a text editor</li>
+              <li>
+                Add the following code to the first line:
+                <pre>const data =</pre>
+              </li>
+              <li>
+                Save the file as <u>nostr-backup.js</u> (note the extension
+                change)
+              </li>
+            </ul>
+          </details>
+        </div>
+        <div id="runLocally" style="display: none">
+          <p>App must run locally.</p>
+          <p>
+            Due to browser limitations, you'll have to use this app from your
+            disk in order for it to be able to import your backup file:
+          </p>
+          <ul>
+            <li>
+              Save this app into the same folder where your backup file is
+            </li>
+            <li>Open the resulting html file with your browser</li>
+          </ul>
+        </div>
+        <div id="form" class="space-between" style="display: none">
+          <p id="events-found"></p>
+          <p>
+            <button onclick="restore()">Restore</button>
+          </p>
+        </div>
       </div>
-    </div>
-    <script src="js/relays.js"></script>
-    <script src="js/nostr-restore.js"></script>
-  </body>
+      <div class="box">
+        <div class="space-between">
+          <p id="broadcasting-status"></p>
+          <p style="padding-top: 2px">
+            <progress
+              type="range"
+              id="broadcasting-progress"
+              name="broadcasting-progress"
+              min="0"
+              max="20"
+              value="0"
+              style="visibility: hidden" />
+          </p>
+        </div>
+      </div>
+      <script src="js/relays.js"></script>
+      <script src="js/nostr-restore.js"></script>
+    </body>
+  </html>
 </html>
