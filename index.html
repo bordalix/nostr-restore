@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/nostr-restore.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="space-between">
+        <h1>Nostr restore</h1>
+        <p>
+          <a href="https://github.com/bordalix/nostr-restore"
+            ><img src="img/github.png"
+          /></a>
+          <a href="https://twitter.com/bordalix/"
+            ><img src="img/twitter.png"
+          /></a>
+          <a
+            href="https://snort.social/p/npub1vt803quxxq32fuwkp42g2lyaw2t9qupvnl3z0vyc3s9kudkyhn8qt28cxv"
+            ><img src="img/nostr.png"
+          /></a>
+        </p>
+      </div>
+    </main>
+    <p>Restore your nostr backup.</p>
+    <details>
+      <summary>Know more</summary>
+      <p>
+        This app will restore your events from a
+        <a href="https://nostr-backup.pages.dev/">nostr-backup</a> file
+      </p>
+      <p>
+        Due to browser limitations, you'll have to use this project in a
+        different way:
+      </p>
+      <ul>
+        <li>
+          You'll have to run it locally, so you will need to get the code from
+          the repo and open the <u>index.html</u> file with your browser
+        </li>
+        <li>
+          Browsers don't allow importing JSON files locally, but will allow
+          Javascript files, so we need to transform our
+          <u>nostr-backup.json</u> file into a Javascript file:
+        </li>
+        <ul>
+          <li>
+            Copy your <u>nostr-backup.json</u> to the root directory of this app
+          </li>
+          <li>Open <u>nostr-backup.json</u> with a text editor</li>
+          <li>
+            Add the following code to the first line:
+            <pre>const data =</pre>
+          </li>
+          <li>
+            Save the file as <u>nostr-backup.js</u> (note the extension change)
+          </li>
+        </ul>
+        <li>
+          Now when you open the <u>index.html</u> with your browser you should
+          see an indication of how many events were found and a button to start
+          broadcasting
+        </li>
+      </ul>
+      <p>
+        If you want to use your own
+        <a
+          href="https://github.com/bordalix/nostr-restore/blob/master/js/relays.js"
+          >list of relays</a
+        >:
+      </p>
+      <ul>
+        <li>
+          Clone <a href="https://github.com/bordalix/nostr-restore">repo</a>
+        </li>
+        <li>Edit <u>js/relays.js</u></li>
+        <li>Open <u>index.html</u> with a browser</li>
+      </ul>
+      <p>
+        Repo at
+        <a href="https://github.com/bordalix/nostr-restore"
+          >https://github.com/bordalix/nostr-restore</a
+        >
+      </p>
+      <p>
+        Twitter
+        <a href="https://twitter.com/bordalix">thread</a>
+        for discussion
+      </p>
+      <p>
+        Nostr
+        <a
+          href="https://snort.social/p/npub1vt803quxxq32fuwkp42g2lyaw2t9qupvnl3z0vyc3s9kudkyhn8qt28cxv"
+          >thread</a
+        >
+        for discussion
+      </p>
+    </details>
+    <div class="box gray">
+      <p id="error" style="display: none">
+        No data found: check the instructions above
+      </p>
+      <div id="form" class="space-between" style="display: none">
+        <p id="events-found"></p>
+        <p>
+          <button onclick="restore()">Restore</button>
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <div class="space-between">
+        <p id="broadcasting-status"></p>
+        <p style="padding-top: 2px">
+          <progress
+            type="range"
+            id="broadcasting-progress"
+            name="broadcasting-progress"
+            min="0"
+            max="20"
+            value="0"
+            style="visibility: hidden" />
+        </p>
+      </div>
+    </div>
+    <script src="./nostr-backup.js"></script>
+    <script src="js/relays.js"></script>
+    <script src="js/restore.js"></script>
+  </body>
+</html>
