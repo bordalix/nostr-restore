@@ -7,7 +7,7 @@ This app will restore your events from a nostr-backup file
 Due to browser limitations, you'll have to run this app locally:
 
 - go to https://nostr-restore.pages.dev, save to disk and open html file with your browser
-- get the code from the this repo and open the index.html file with your browser
+- or get the code from the this repo and open the index.html file with your browser
 
 ### Import backup file
 
