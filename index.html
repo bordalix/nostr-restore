@@ -23,21 +23,14 @@
         content="Restore your Nostr events" />
       <meta property="twitter:image" content="/img/nostr-restore_twitter.png" />
       <!-- Favicon -->
-      <link
-        rel="shortcut icon"
-        href="https://nostr-utils.pages.dev/img/restore.png"
-        type="image/x-icon" />
+      <link rel="shortcut icon" href="img/restore.png" type="image/x-icon" />
       <!-- CSS -->
-      <link
-        rel="stylesheet"
-        href="https://nostr-utils.pages.dev/css/style.css" />
+      <link rel="stylesheet" href="css/style.css" />
       <!-- Lightning -->
       <meta name="lightning" content="bordalix@getalby.com" />
       <!-- PWA -->
       <meta name="theme-color" content="#ffffff" />
-      <link
-        rel="apple-touch-icon"
-        href="https://nostr-utils.pages.dev/img/restore.png" />
+      <link rel="apple-touch-icon" href="img/restore.png" />
     </head>
     <body>
       <main class="container">
@@ -45,19 +38,62 @@
           <h1>Nostr restore</h1>
           <p>
             <a href="https://github.com/bordalix/nostr-restore"
-              ><img src="https://nostr-utils.pages.dev/img/github.png"
+              ><img src="img/github.png"
             /></a>
             <a href="https://twitter.com/bordalix/"
-              ><img src="https://nostr-utils.pages.dev/img/twitter.png"
+              ><img src="img/twitter.png"
             /></a>
             <a
               href="https://snort.social/p/npub1vt803quxxq32fuwkp42g2lyaw2t9qupvnl3z0vyc3s9kudkyhn8qt28cxv"
-              ><img src="https://nostr-utils.pages.dev/img/nostr.png"
+              ><img src="img/nostr.png"
             /></a>
           </p>
         </div>
       </main>
-      <p>Restore your nostr backup.</p>
+      <p>Restore your nostr backup</p>
+      <p>
+        Works with files from
+        <a href="https://nostr-backup.pages.dev">nostr-backup</a>
+      </p>
+      <details>
+        <summary>Know more</summary>
+        <p>
+          This app will restore your events from a nostr-backup file to a big
+          list of relays.
+        </p>
+        <p>
+          If you want to use your own
+          <a
+            href="https://github.com/bordalix/nostr-restore/blob/master/js/relays.js"
+            >list of relays</a
+          >:
+        </p>
+        <ul>
+          <li>
+            Save site or clone
+            <a href="https://github.com/bordalix/nostr-restore">repo</a>
+          </li>
+          <li>Edit <u>js/relays.js</u></li>
+          <li>Open <u>index.html</u> with a browser</li>
+        </ul>
+        <p>
+          Repo at
+          <a href="https://github.com/bordalix/nostr-restore">github</a>
+        </p>
+        <p>
+          Twitter
+          <a href="https://twitter.com/bordalix/">thread</a>
+          for discussion
+        </p>
+        <p>
+          Nostr
+          <a
+            href="https://snort.social/e/note1xexzdxczz0gmxl6zm5zph54hn6m6uwkcln3vxjvwpyqw3xxfgf6sp8v69w"
+            >thread</a
+          >
+          for discussion
+        </p>
+      </details>
       <div class="box gray">
         <div id="noDataError" style="display: none">
           <p>No data found.</p>
